@@ -26,30 +26,6 @@ public class KafkaAdapterConfig {
     @Autowired
     private KafkaProperties kafkaProperties;
 
-//    @Bean
-//    ConsumerFactory<String, RegisteredVehicleImportedEvent> consumerFactory() {
-//        JsonDeserializer<RegisteredVehicleImportedEvent> deserializer = new JsonDeserializer<>(RegisteredVehicleImportedEvent.class);
-//        deserializer.setRemoveTypeHeaders(false);
-//        deserializer.addTrustedPackages("*");
-//        deserializer.setUseTypeMapperForKey(true);
-//
-//        Map<String, Object> props = new HashMap<>();
-//        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
-//        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-//        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer);
-//        props.put(ConsumerConfig.GROUP_ID_CONFIG, "json");
-//        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-//
-//        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
-//    }
-//
-//    @Bean
-//    ConcurrentKafkaListenerContainerFactory<String, RegisteredVehicleImportedEvent> kafkaListenerContainerFactory() {
-//        ConcurrentKafkaListenerContainerFactory<String, RegisteredVehicleImportedEvent> factory = new ConcurrentKafkaListenerContainerFactory<>();
-//        factory.setConsumerFactory(consumerFactory());
-//        return factory;
-//    }
-
     @Bean
     ProducerFactory<String, RegisteredVehicleImportedEvent> producerFactoryRegisteredVehicleImported() {
         Map<String, Object> config = new HashMap<>();
