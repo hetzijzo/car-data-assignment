@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RegisteredVehicleImportCLR implements CommandLineRunner {
 
-    private final RegisteredVehicleRepository registeredVehicleRepository;
+    private final RegisteredVehicleGateway registeredVehicleGateway;
 
     @Override
     public void run(String... args) {
-        this.registeredVehicleRepository.getRegisteredVehicles()
+        this.registeredVehicleGateway.getRegisteredVehicles()
             .stream()
             .limit(100)
             .forEach(registeredVehicle ->{

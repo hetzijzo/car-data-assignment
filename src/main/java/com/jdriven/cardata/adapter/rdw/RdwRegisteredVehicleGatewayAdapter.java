@@ -1,7 +1,7 @@
 package com.jdriven.cardata.adapter.rdw;
 
 import com.jdriven.cardata.domain.RegisteredVehicle;
-import com.jdriven.cardata.domain.RegisteredVehicleRepository;
+import com.jdriven.cardata.domain.RegisteredVehicleGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-class RdwRegisteredVehicleRepositoryAdapter implements RegisteredVehicleRepository {
+class RdwRegisteredVehicleGatewayAdapter implements RegisteredVehicleGateway {
 
     private final RdwCarDataClient rdwCarDataClient;
     private final RdwCarDataMapper rdwCarDataMapper;
